@@ -55,7 +55,7 @@ The main script, `main.py`, performs the following tasks:
         ```
 2.  **Execution:**
     -   Save the Python code as a `.py` file (e.g., `main.py`).
-    -   Make sure the `9ef84268-d588-465a-a308-a864a43d0070.csv` file is accessible at the path specified in the `pd.read_csv()` function (or change the path to match the actual location).
+    -   Make sure the `Raw data.csv` file is accessible at the path specified in the `pd.read_csv()` function (or change the path to match the actual location).
     -   Run the script from the command line:
         ```bash
         python main.py
