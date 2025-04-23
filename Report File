@@ -1,103 +1,82 @@
 # Exploratory Data Analysis on Agricultural Commodity Prices in India
 
-**Project Semester:** January–April 2025  
-**Submitted by:** Amit Krishna  
-**Registration No:** 12326830  
-**Course:** DATA SCIENCE TOOLBOX: PYTHON PROGRAMMING (INT375)  
-**Mentor:** Ms. Maneet Kaur  
-**University:** Lovely Professional University
+## Project Information
 
-## 📌 Project Overview
+*   **Project Semester:** January–April 2025
+*   **Submitted by:** Amit Krishna
+*   **Registration No:** 12326830
+*   **Course:** DATA SCIENCE TOOLBOX: PYTHON PROGRAMMING (INT375)
+*   **Mentor:** Ms. Maneet Kaur
+*   **University:** Lovely Professional University
 
-This project performs Exploratory Data Analysis (EDA) on agricultural commodity pricing data across Indian states. The goal is to identify pricing patterns, market behaviors, and regional disparities using Python libraries such as Pandas, Seaborn, and Scikit-learn.
+## Project Overview
 
-> 📎 [LinkedIn Project Post](https://tinyurl.com/EDAagri)
+This project conducts an Exploratory Data Analysis (EDA) on agricultural commodity pricing data across Indian states. The primary objective is to uncover pricing patterns, understand market behaviors, and identify regional disparities using Python and relevant data science libraries. The analysis involves data cleaning, transformation, and visualization to gain insights into the agricultural market.
 
----
+[LinkedIn Project Post](https://tinyurl.com/EDAagri) - (Replace with your actual LinkedIn post URL)
 
-## 📂 Dataset Source
+## Dataset
 
-- **Source:** [Data.gov.in](https://www.data.gov.in/resource/current-daily-price-various-commodities-various-markets-mandi)
-- **Features:** Commodity, State, Market, Variety, Grade, Min/Max/Modal Price, Arrival Date
+*   **Dataset Source:** [Data.gov.in](https://www.data.gov.in/resource/current-daily-price-various-commodities-various-markets-mandi)
+*   **Data Description:** The dataset contains daily price information for various agricultural commodities across different markets in India.
+*   **Features (Columns):**
+    *   `Commodity`: Name of the agricultural commodity.
+    *   `State`: State where the market is located.
+    *   `Market`: Name of the market.
+    *   `Variety`: Variety of the commodity.
+    *   `Grade`: Grade of the commodity.
+    *   `MinPrice`: Minimum price of the commodity.
+    *   `MaxPrice`: Maximum price of the commodity.
+    *   `ModalPrice`: Modal price of the commodity.
+    *   `Arrival_Date`: Date of arrival of the commodity.
 
----
+## EDA Workflow
 
-## 🔍 EDA Workflow
+The EDA process followed a systematic approach:
 
-1. **Column Renaming** – for readability  
-2. **Date Conversion** – formatting for time-based analysis  
-3. **Handling Missing Values** – dropped or imputed nulls  
-4. **Normalization** – scaled price fields for comparison  
+1.  **Column Renaming:** Renamed columns for improved readability and ease of use.
+2.  **Date Conversion:** Converted the `Arrival_Date` column to a datetime format for time-based analysis.
+3.  **Handling Missing Values:** Addressed missing data through either removal (dropping) or imputation (e.g., mean, forward fill) as appropriate for the specific column.
+4.  **Normalization:** Scaled numerical price fields (e.g., using MinMaxScaler) to a consistent range for fair comparison.
 
----
+## Key Analysis Objectives & Results
 
-## 📊 Key Analysis Objectives
+The analysis focused on several key objectives, each providing specific insights. The following table summarizes the objectives, methods used, and the key findings:
 
-### ✅ Objective 1: Top 10 Commodities by Count
-- Tools: `value_counts()`, `sns.barplot()`
-- Result: Onion, Tomato, Potato lead
+| Objective                                      | Tools Used                                                 | Result Summary                                                                                                                                    |
+| :--------------------------------------------- | :--------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Objective 1: Top 10 Commodities by Count**    | `value_counts()`, `sns.barplot()`                         | Onion, Tomato, and Potato were identified as the most frequently recorded commodities in the dataset.                                           |
+| **Objective 2: Top 10 Markets by Avg Modal Price** | `groupby()`, `mean()`, `nlargest()`                       | Certain markets showed significantly higher average modal prices, indicating potential price premiums or regional variations.                        |
+| **Objective 3: Correlation Between Prices**     | `corr()`, `sns.heatmap()`                                   | A strong positive correlation was observed between Modal Price and Max Price, which is expected.                                                     |
+| **Objective 4: Histogram of Modal Prices**     | `histplot()`, `isin()`                                     | Modal prices varied significantly by commodity, with certain commodities (e.g., Onion) exhibiting higher price peaks.                              |
+| **Objective 5: Entry Count per State**          | `value_counts()`, `sns.barplot()`                         | Tamil Nadu, Kerala, and Punjab had the highest counts of records, suggesting higher data contribution or more active markets in these states.         |
+| **Objective 6: Pairplot of Price Columns**      | `pairplot()`                                               | Clear positive relationships were evident between the various price types (Min, Max, Modal), as expected.                                             |
+| **Objective 7: Avg Modal Price by Commodity**    | `groupby()`, `mean()`, `sort_values()`                    | Commodities like Kakada and Black Pepper exhibited some of the highest average modal prices, indicating higher value or potentially more premium products. |
+| **Objective 8: Market-wise Modal Price Distribution** | `boxplot()`                                                | Significant variability was observed in modal prices across different markets, highlighting market-specific pricing dynamics.                         |
+| **Objective 9: Linear Regression (Max vs Modal Price)** | `LinearRegression()`, `train_test_split()`            | A strong linear relationship was found between Max Price and Modal Price, and the model achieved a low Mean Squared Error (MSE), suggesting predictive potential. |
 
-### ✅ Objective 2: Top 10 Markets by Avg Modal Price
-- Tools: `groupby()`, `mean()`, `nlargest()`
-- Result: Certain markets report higher average prices
+## Conclusion
 
-### ✅ Objective 3: Correlation Between Prices
-- Tools: `corr()`, `sns.heatmap()`
-- Result: Modal price is strongly correlated with Max price
+The EDA project successfully extracted valuable insights from the agricultural commodity pricing data. The analysis revealed trends in commodity frequency, market dynamics, and state-level participation.  Furthermore, the linear regression model provided a baseline for price prediction, demonstrating the potential to forecast modal prices based on maximum price.
 
-### ✅ Objective 4: Histogram of Modal Prices
-- Tools: `histplot()`, `isin()`
-- Result: Modal prices vary by commodity, Onion peaks high
+## Future Scope
 
-### ✅ Objective 5: Entry Count per State
-- Tools: `value_counts()`, `sns.barplot()`
-- Result: Tamil Nadu leads, followed by Kerala and Punjab
+This project provides a strong foundation for further analysis and exploration:
 
-### ✅ Objective 6: Pairplot of Price Columns
-- Tools: `pairplot()`
-- Result: Clear positive relationships between price types
+*   **Time-Series Forecasting:** Implement time-series models to predict future price trends.
+*   **Anomaly Detection:** Explore anomaly detection techniques to identify unusual price fluctuations.
+*   **Dashboard Development:** Create interactive dashboards using tools like Power BI or Tableau for dynamic visualization and reporting.
+*   **External Data Integration:** Incorporate seasonal and weather data to analyze their impact on prices.
+*   **Market Efficiency Analysis:** Investigate market efficiency and pricing dynamics.
 
-### ✅ Objective 7: Avg Modal Price by Commodity
-- Tools: `groupby()`, `mean()`, `sort_values()`
-- Result: Kakada, Black Pepper rank high in price
+## References
 
-### ✅ Objective 8: Market-wise Modal Price Distribution
-- Tools: `boxplot()`
-- Result: High variability among certain markets
-
-### ✅ Objective 9: Linear Regression (Max vs Modal Price)
-- Tools: `LinearRegression()`, `train_test_split()`
-- Result: Strong linear relationship, low MSE
-
----
-
-## 🧾 Conclusion
-
-The project revealed that:
-- Commodities like Onion, Tomato, and Potato are most frequently recorded.
-- States such as Tamil Nadu and Kerala dominate data contributions.
-- Regression models show potential for price prediction.
-
----
-
-## 🔮 Future Scope
-
-- Time-series forecasting for future price trends  
-- Anomaly detection in pricing  
-- Dashboard development (Power BI/Tableau)  
-- Integrating seasonal and weather data  
-- Market efficiency analysis
+1.  **Dataset:** [Data.gov.in](https://www.data.gov.in/resource/current-daily-price-various-commodities-various-markets-mandi)
+2.  **Pandas:** [https://pandas.pydata.org/](https://pandas.pydata.org/)
+3.  **Seaborn:** [https://seaborn.pydata.org/](https://seaborn.pydata.org/)
+4.  **Scikit-learn:** [https://scikit-learn.org/stable/](https://scikit-learn.org/stable/)
+5.  **Matplotlib:** [https://matplotlib.org/](https://matplotlib.org/)
 
 ---
 
-## 📚 References
-
-1. [Dataset from data.gov.in](https://www.data.gov.in/resource/current-daily-price-various-commodities-various-markets-mandi)  
-2. [Pandas](https://pandas.pydata.org/)  
-3. [Seaborn](https://seaborn.pydata.org/)  
-4. [Scikit-learn](https://scikit-learn.org/stable/)  
-5. [Matplotlib](https://matplotlib.org/)
-
----
-
-> 📝 _All analysis, findings, and visualizations were conducted and compiled by Amit Krishna under academic supervision._
+**Note:** *All analysis, findings, and visualizations were conducted and compiled by Amit Krishna under academic supervision.*
