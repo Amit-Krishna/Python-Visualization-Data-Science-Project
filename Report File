@@ -1,0 +1,103 @@
+# Exploratory Data Analysis on Agricultural Commodity Prices in India
+
+**Project Semester:** January–April 2025  
+**Submitted by:** Amit Krishna  
+**Registration No:** 12326830  
+**Course:** DATA SCIENCE TOOLBOX: PYTHON PROGRAMMING (INT375)  
+**Mentor:** Ms. Maneet Kaur  
+**University:** Lovely Professional University
+
+## 📌 Project Overview
+
+This project performs Exploratory Data Analysis (EDA) on agricultural commodity pricing data across Indian states. The goal is to identify pricing patterns, market behaviors, and regional disparities using Python libraries such as Pandas, Seaborn, and Scikit-learn.
+
+> 📎 [LinkedIn Project Post](https://tinyurl.com/EDAagri)
+
+---
+
+## 📂 Dataset Source
+
+- **Source:** [Data.gov.in](https://www.data.gov.in/resource/current-daily-price-various-commodities-various-markets-mandi)
+- **Features:** Commodity, State, Market, Variety, Grade, Min/Max/Modal Price, Arrival Date
+
+---
+
+## 🔍 EDA Workflow
+
+1. **Column Renaming** – for readability  
+2. **Date Conversion** – formatting for time-based analysis  
+3. **Handling Missing Values** – dropped or imputed nulls  
+4. **Normalization** – scaled price fields for comparison  
+
+---
+
+## 📊 Key Analysis Objectives
+
+### ✅ Objective 1: Top 10 Commodities by Count
+- Tools: `value_counts()`, `sns.barplot()`
+- Result: Onion, Tomato, Potato lead
+
+### ✅ Objective 2: Top 10 Markets by Avg Modal Price
+- Tools: `groupby()`, `mean()`, `nlargest()`
+- Result: Certain markets report higher average prices
+
+### ✅ Objective 3: Correlation Between Prices
+- Tools: `corr()`, `sns.heatmap()`
+- Result: Modal price is strongly correlated with Max price
+
+### ✅ Objective 4: Histogram of Modal Prices
+- Tools: `histplot()`, `isin()`
+- Result: Modal prices vary by commodity, Onion peaks high
+
+### ✅ Objective 5: Entry Count per State
+- Tools: `value_counts()`, `sns.barplot()`
+- Result: Tamil Nadu leads, followed by Kerala and Punjab
+
+### ✅ Objective 6: Pairplot of Price Columns
+- Tools: `pairplot()`
+- Result: Clear positive relationships between price types
+
+### ✅ Objective 7: Avg Modal Price by Commodity
+- Tools: `groupby()`, `mean()`, `sort_values()`
+- Result: Kakada, Black Pepper rank high in price
+
+### ✅ Objective 8: Market-wise Modal Price Distribution
+- Tools: `boxplot()`
+- Result: High variability among certain markets
+
+### ✅ Objective 9: Linear Regression (Max vs Modal Price)
+- Tools: `LinearRegression()`, `train_test_split()`
+- Result: Strong linear relationship, low MSE
+
+---
+
+## 🧾 Conclusion
+
+The project revealed that:
+- Commodities like Onion, Tomato, and Potato are most frequently recorded.
+- States such as Tamil Nadu and Kerala dominate data contributions.
+- Regression models show potential for price prediction.
+
+---
+
+## 🔮 Future Scope
+
+- Time-series forecasting for future price trends  
+- Anomaly detection in pricing  
+- Dashboard development (Power BI/Tableau)  
+- Integrating seasonal and weather data  
+- Market efficiency analysis
+
+---
+
+## 📚 References
+
+1. [Dataset from data.gov.in](https://www.data.gov.in/resource/current-daily-price-various-commodities-various-markets-mandi)  
+2. [Pandas](https://pandas.pydata.org/)  
+3. [Seaborn](https://seaborn.pydata.org/)  
+4. [Scikit-learn](https://scikit-learn.org/stable/)  
+5. [Matplotlib](https://matplotlib.org/)
+
+---
+
+> 📝 _All analysis, findings, and visualizations were conducted and compiled by Amit Krishna under academic supervision._
